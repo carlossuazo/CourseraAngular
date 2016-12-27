@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0321)https://d3c33hcgiwev3.cloudfront.net/_49c417f481d797cf78b2985d8bded22f_dishdetail.html?Expires=1477440000&Signature=dYpjZbBKyDrDU7i8V3ECVDJjNGmzV6VWvj2DStR11YwP7QXv-WBY1-JXa8LGQzzT1VoUGYx3BgWrB5mOYCkVwD~VkJ4PtS-TxeSrKbXQAINAps3QR9Fo~xhEwx66krA-xUM4tSKx0vdzX0WBVpAyJADpPUaAuv6SGumIAn1ExCM_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A -->
 <html lang="en" ng-app="confusionApp"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head
@@ -25,7 +25,7 @@
 <body cz-shortcut-listen="true">
 
     <div class="container">
-        <div class="row row-content" ng-controller="dishDetailController as dishDetailCtrl">
+        <div class="row row-content" ng-controller="DishDetailController as dishDetailCtrl">
             <div class="col-xs-12">
                 <media class="media" >
                     <div class="media-left">
@@ -63,13 +63,13 @@
     <script>
 
         var app = angular.module('confusionApp',[]);
-        
+
         app.controller('dishDetailController', function() {
 
             var dish={
                           name:'Uthapizza',
                           image: 'images/uthapizza.png',
-                          category: 'mains', 
+                          category: 'mains',
                           label:'Hot',
                           price:'4.99',
                           description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
@@ -104,12 +104,12 @@
                                    author:"25 Cent",
                                    date:"2011-12-02T17:57:28.556094Z"
                                }
-                               
+
                            ]
                     };
-            
+
             this.dish = dish;
-            
+
         });
 
     </script>
