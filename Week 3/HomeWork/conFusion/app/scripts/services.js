@@ -3,13 +3,13 @@
 angular.module('confusionApp')
 
         .service('menuFactory', function() {
-    
+
             var dishes=[
                          {
                           _id:0,
                           name:'Uthapizza',
                           image: 'images/uthapizza.png',
-                          category: 'mains', 
+                          category: 'mains',
                           label:'Hot',
                           price:'4.99',
                           description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
@@ -44,14 +44,14 @@ angular.module('confusionApp')
                                    author:"25 Cent",
                                    date:"2011-12-02T17:57:28.556094Z"
                                }
-                               
+
                            ]
                         },
                         {
                           _id:1,
-                          name:'Zucchipakoda', 
+                          name:'Zucchipakoda',
                           image: 'images/zucchipakoda.png',
-                          category: 'appetizer', 
+                          category: 'appetizer',
                           label:'',
                           price:'1.99',
                           description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
@@ -86,14 +86,14 @@ angular.module('confusionApp')
                                    author:"25 Cent",
                                    date:"2011-12-02T17:57:28.556094Z"
                                }
-                               
+
                            ]
                         },
                         {
                           _id:2,
-                          name:'Vadonut', 
+                          name:'Vadonut',
                           image: 'images/vadonut.png',
-                          category: 'appetizer', 
+                          category: 'appetizer',
                           label:'New',
                           price:'1.99',
                           description:'A quintessential ConFusion experience, is it a vada or is it a donut?',
@@ -128,14 +128,14 @@ angular.module('confusionApp')
                                    author:"25 Cent",
                                    date:"2011-12-02T17:57:28.556094Z"
                                }
-                               
+
                            ]
                         },
                         {
                           _id:3,
-                          name:'ElaiCheese Cake', 
+                          name:'ElaiCheese Cake',
                           image: 'images/elaicheesecake.png',
-                          category: 'dessert', 
+                          category: 'dessert',
                           label:'',
                           price:'2.99',
                           description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms',
@@ -170,43 +170,47 @@ angular.module('confusionApp')
                                    author:"25 Cent",
                                    date:"2011-12-02T17:57:28.556094Z"
                                }
-                               
+
                            ]
                         }
                         ];
             var promotions = [
                 {
                           _id:0,
-                          name:'Weekend Grand Buffet', 
+                          name:'Weekend Grand Buffet',
                           image: 'images/buffet.png',
                           label:'New',
                           price:'19.99',
                           description:'Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person ',
                 }
-                
+
             ];
-    
+
                 this.getDishes = function(){
-                    
+
                     return dishes;
-                    
+
                 };
-    
+
                 this.getDish = function (index) {
-                    
+
                     return dishes[index];
                 };
-    
+
                 // implement a function named getPromotion
                 // that returns a selected promotion.
-    
-                        
+                this.getPromotion = function (index) {
+
+                    return promotions[index];
+                };
+
+
         })
 
         .factory('corporateFactory', function() {
-    
+
             var corpfac = {};
-    
+
             var leadership = [
                 {
                     name: "Peter Pan",
@@ -236,14 +240,25 @@ angular.module('confusionApp')
                     abbr: "EC",
                     description: "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
                 }
-                
+
             ];
-     
+
             // Implement two functions, one named getLeaders,
+            corpfac.getLeaders = function(){
+
+                return leadership;
+
+            };
+
             // the other named getLeader(index)
+            corpfac.getLeader = function (index) {
+
+                return leadership[index];
+            };
+
             // Remember this is a factory not a service
-    
-    
+            return corpfac;
+
         })
 
 ;
