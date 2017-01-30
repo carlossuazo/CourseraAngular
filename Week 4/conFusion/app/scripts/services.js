@@ -3,7 +3,7 @@
 angular.module('confusionApp')
     .constant("baseURL", "http://localhost:3000/")
 
-    .service('menuFactory', ['$http', 'baseURL',function($http, baseURL) {
+    .service('menuFactory', ['$resource', 'baseURL', function($resource, baseURL) {
 
 
         var promotions = [{
@@ -18,24 +18,30 @@ angular.module('confusionApp')
         ];
 
         this.getDishes = function() {
-            return $http.get(baseURL + "dishes");
-        };
-        this.getDish = function(index) {
-            return $http.get(baseURL + "dishes/" + index);
-
+            return $resource(baseURL + "dishes/:id", null, {
+                'update': {
+                    method: 'PUT'
+                }
+            });
         };
 
         // implement a function named getPromotion
         // that returns a selected promotion.
-        this.getPromotion = function(index) {
+        this.getPromotion = function() {
 
-            return promotions[index];
+            return $resource(baseURL + "promotions/:id", null, {
+                'update': {
+                    method: 'PUT'
+                }
+            });
+
+            //return promotions[index];
         };
 
 
     }])
 
-    .factory('corporateFactory', function() {
+    .factory('corporateFactory', ['$resource','baseURL',function($resource,baseURL) {
 
         var corpfac = {};
 
@@ -73,7 +79,11 @@ angular.module('confusionApp')
         // Implement two functions, one named getLeaders,
         corpfac.getLeaders = function() {
 
-            return leadership;
+          return $resource(baseURL + "leadership/:id", null, {
+              'update': {
+                  method: 'PUT'
+              }
+          });
 
         };
 
@@ -86,6 +96,6 @@ angular.module('confusionApp')
         // Remember this is a factory not a service
         return corpfac;
 
-    })
+    }])
 
 ;
